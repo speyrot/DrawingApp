@@ -21,12 +21,14 @@ canvas.addEventListener('mousedown', (e) => {
     y = e.offsetY
 })
 
+
 document.addEventListener('mouseup', (e) => {
     isPressed = false
 
     x = undefined
     y = undefined
 })
+
 
 canvas.addEventListener('mousemove', (e) => {
     if(isPressed) {
@@ -41,12 +43,14 @@ canvas.addEventListener('mousemove', (e) => {
     }
 })
 
+
 function drawCircle(x, y) {
     ctx.beginPath();
     ctx.arc(x, y, size, 0, Math.PI * 2)
     ctx.fillStyle = color
     ctx.fill()
 }
+
 
 function drawLine(x1, y1, x2, y2) {
     ctx.beginPath()
@@ -57,9 +61,11 @@ function drawLine(x1, y1, x2, y2) {
     ctx.stroke()
 }
 
+
 function updateSizeOnScreen() {
     sizeEL.innerText = size
 }
+
 
 increaseBtn.addEventListener('click', () => {
     size += 5
@@ -70,6 +76,7 @@ increaseBtn.addEventListener('click', () => {
 
     updateSizeOnScreen()
 })
+
 
 decreaseBtn.addEventListener('click', () => {
     size -= 5
